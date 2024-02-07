@@ -14,8 +14,11 @@ export default {
         GREY_200: 'hsl(235, 18%, 26%)',
         GREY_100: 'hsl(231, 7%, 60%)',
         TOMATO: 'hsl(4, 100%, 67%)',
-      }
-    },
+      },
+      listStyleImage: {
+        checkmark: 'url("./src/assets/icon-list.svg")',
+      },
+    }
   },
   plugins: [],
 }
