@@ -19,17 +19,19 @@ export function Sucess() {
   }, [navigate]);
 
   return (
-    <div className='w-full h-screen flex flex-col justify-between px-6 py-10'>
-      <div>
-        <img
-          className="w-16 h-16 mb-10"
-          src={icon} alt="icon check" />
-        <Title text='Thanks for subscribing!' />
-        <p className='text-GREY_300 mt-6'>A confirmation email has been sent to <strong className='text-GREY_300'>{email}</strong>. Please open it and click the button inside to confirm your subscription</p>
+    <main className='w-full h-screen px-6 flex items-center justify-center md:p-10 md:bg-GREY_200'>
+      <div className='h-full flex flex-col justify-around bg-white md:p-10 md:w-[504px] h-[520px] rounded-3xl'>
+        <div>
+          <img
+            className="w-16 h-16 mb-10"
+            src={icon} alt="icon check" />
+          <Title text='Thanks for subscribing!' />
+          <p className='text-GREY_300 mt-6 md:text-xl'>A confirmation email has been sent to <strong className='text-GREY_300'>{email}</strong>. Please open it and click the button inside to confirm your subscription</p>
+        </div>
+        <Button
+          handlePress={handleNavigate}
+          message='Dismiss message' />
       </div>
-      <Button
-        handlePress={handleNavigate}
-        message='Dismiss message' />
-    </div>
+    </main>
   )
 }
