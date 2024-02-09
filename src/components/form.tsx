@@ -5,6 +5,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from './button';
 import { useNavigate } from 'react-router-dom';
 
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
+
 const schema = z.object({
   email: z.string().min(1, "email is required").email('valid email required')
 })
@@ -12,7 +15,8 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export function Form() {
-  
+
+  const { setEmail } = useContext(UserContext)
   const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors }
@@ -21,8 +25,8 @@ export function Form() {
     mode: 'onChange'
   });
 
-  function onSubmit(data: FormData) {
-    navigate(`/sucess/${data.email}`)
+  function onSubmit() {
+    navigate(`/sucess`)
   }
 
   return (
@@ -42,6 +46,7 @@ export function Form() {
           id="email"
           type="text"
           placeholder="email@company.com"
+          onChange={e => setEmail(e.target.value)}
           className={`h-14 border-2 border-GREY_100 rounded-lg p-6 placeholder:text-base outline-none 
         ${errors.email && 'bg-red-100 bg-opacity-8 border-red-500 placeholder:text-red-500'}`} />
       </div>

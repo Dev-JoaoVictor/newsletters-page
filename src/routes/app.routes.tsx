@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
     element: <App />
   },
   {
-    path: '/sucess/:email',
+    path: '/sucess',
     element: <Sucess />
   }
 ])

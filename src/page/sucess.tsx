@@ -4,12 +4,15 @@ import icon from '../assets/icon-success.svg'
 import { Button } from '../components/button'
 import { Title } from '../components/title'
 
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 export function Sucess() {
 
-  const { email } = useParams();
   const navigate = useNavigate();
+  const { email } = useContext(UserContext)
 
   const handleNavigate = useCallback(() => {
     navigate(-1)
