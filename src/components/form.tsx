@@ -37,7 +37,7 @@ export function Form() {
       <div className='flex flex-col gap-2 text-GREY_300'>
         <label
           htmlFor="email"
-          className='text-xs font-bold text-GREY_300 flex justify-between'>
+          className='text-xs font-bold text-GREY_300 flex justify-between lg:text-base'>
           Email address
           {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
         </label>
@@ -48,7 +48,7 @@ export function Form() {
           placeholder="email@company.com"
           onChange={e => setEmail(e.target.value)}
           className={`h-14 border-2 border-GREY_100 rounded-lg p-6 placeholder:text-base outline-none 
-        ${errors.email && 'bg-red-100 bg-opacity-8 border-red-500 placeholder:text-red-500'}`} />
+        ${errors.email && 'bg-red-100 bg-opacity-8 border-red-500 placeholder:text-red-500'} lg:h-16 lg:text-lg lg:placeholder:text-lg`} />
       </div>
       <Button
         handlePress={() => onSubmit}
