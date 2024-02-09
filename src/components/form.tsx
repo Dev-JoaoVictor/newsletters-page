@@ -1,6 +1,9 @@
 import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { Button } from './button';
+import { useNavigate } from 'react-router-dom';
 
 const schema = z.object({
   email: z.string().min(1, "email is required").email('valid email required')
@@ -8,12 +11,9 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-
-interface FormProps {
-  children: React.ReactNode
-}
-
-export function Form({ children }: FormProps) {
+export function Form() {
+  
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors }
   } = useForm<FormData>({
@@ -22,7 +22,7 @@ export function Form({ children }: FormProps) {
   });
 
   function onSubmit(data: FormData) {
-    console.log(data)
+    navigate(`/sucess/${data.email}`)
   }
 
   return (
@@ -45,7 +45,9 @@ export function Form({ children }: FormProps) {
           className={`h-14 border-2 border-GREY_100 rounded-lg p-6 placeholder:text-base outline-none 
         ${errors.email && 'bg-red-100 bg-opacity-8 border-red-500 placeholder:text-red-500'}`} />
       </div>
-      {children}
+      <Button
+        handlePress={() => onSubmit}
+        message='Subscribe to monthly newsletter' />
     </form>
   )
 }

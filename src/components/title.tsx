@@ -4,7 +4,7 @@ interface TitleProps {
 
 export function Title({ text }: TitleProps) {
   return (
-    <h1 className="text-[40px] font-bold text-GREY_300">
+    <h1 className="text-[40px] leading-10 font-bold text-GREY_300">
       {text}
     </h1>
   )

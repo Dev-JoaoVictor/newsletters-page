@@ -3,7 +3,7 @@ import banner from './assets/illustration-sign-up-mobile.svg'
 
 import { Form } from './components/form';
 import { Title } from './components/title';
-import { Button } from './components/button';
+
 
 export function App() {
   return (
@@ -28,11 +28,7 @@ export function App() {
             </li>
           </ul>
         </div>
-        <div>
-          <Form>
-            <Button message='Subscribe to monthly newsletter' />
-          </Form>
-        </div>
+        <Form />
       </section>
     </main>
   )
