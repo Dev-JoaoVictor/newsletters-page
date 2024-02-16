@@ -20,7 +20,7 @@ export function Sucess() {
 
   return (
     <main className='w-full h-screen px-6 flex items-center justify-center md:p-10 md:bg-GREY_200'>
-      <div className='h-full flex flex-col justify-around bg-white md:p-10 md:w-[504px] h-[520px] rounded-3xl'>
+      <div className='h-full flex flex-col justify-around bg-white md:p-10 md:max-w-[504px] max-h-[520px] rounded-3xl'>
         <div>
           <img
             className="w-16 h-16 mb-10"
